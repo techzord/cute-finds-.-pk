@@ -1,0 +1,1591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #faf9f7;
+    color: #171717;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+    background: #171717;
+    color: #ffffff;
+    text-align: center;
+    padding: 9px 15px;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 76px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #8b5e3c;
+}
+
+.nav-order-btn {
+    background: #171717;
+    color: white;
+    padding: 11px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-order-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 75px 30px 90px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    width: 100%;
+}
+
+.main-image-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.08;
+
+    background: #f1efeb;
+    border-radius: 28px;
+
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: opacity 0.25s ease;
+}
+
+.product-badge {
+    position: absolute;
+    z-index: 2;
+
+    top: 18px;
+    left: 18px;
+
+    background: #171717;
+    color: #ffffff;
+
+    padding: 8px 13px;
+    border-radius: 30px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.gallery-arrow {
+    position: absolute;
+    z-index: 3;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.9);
+    color: #171717;
+
+    font-size: 27px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.gallery-arrow.left {
+    left: 15px;
+}
+
+.gallery-arrow.right {
+    right: 15px;
+}
+
+.gallery-arrow:hover {
+    background: #171717;
+    color: #ffffff;
+}
+
+
+/* THUMBNAILS */
+
+.thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.thumbnail {
+    border: 2px solid transparent;
+    background: transparent;
+
+    padding: 0;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+}
+
+.thumbnail.active {
+    border-color: #171717;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.small-label {
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #8b5e3c;
+
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: clamp(42px, 5vw, 66px);
+    line-height: 1.03;
+    letter-spacing: -3px;
+
+    max-width: 600px;
+}
+
+.hero-content h1 span {
+    color: #8b5e3c;
+}
+
+.hero-description {
+    margin-top: 22px;
+
+    max-width: 500px;
+
+    color: #666666;
+    font-size: 16px;
+}
+
+
+/* PRICE */
+
+.price-box {
+    margin-top: 28px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.old-price {
+    color: #999999;
+    text-decoration: line-through;
+    font-size: 17px;
+}
+
+.current-price {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+
+/* QUICK INFO */
+
+.quick-info {
+    margin-top: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    color: #444444;
+    font-size: 14px;
+}
+
+.quick-info strong {
+    color: #8b5e3c;
+    margin-right: 7px;
+}
+
+
+/* BUTTON */
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    margin-top: 32px;
+
+    background: #171717;
+    color: white;
+
+    padding: 16px 25px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    min-width: 220px;
+
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.safe-text {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #888888;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features-section {
+    background: #ffffff;
+    padding: 90px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: auto;
+}
+
+.section-heading span,
+.showcase-text > span,
+.order-heading > span {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #8b5e3c;
+}
+
+.section-heading h2 {
+    margin-top: 10px;
+
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.features-grid {
+    max-width: 1050px;
+    margin: 50px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: #faf9f7;
+    padding: 35px 28px;
+
+    border-radius: 18px;
+    border: 1px solid #eeeeee;
+}
+
+.feature-icon {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    color: #777777;
+    font-size: 14px;
+}
+
+
+/* =========================
+   SHOWCASE
+========================= */
+
+.showcase {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 100px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+    align-items: center;
+}
+
+.showcase-text h2 {
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    margin-top: 12px;
+}
+
+.showcase-text p {
+    color: #666666;
+    max-width: 470px;
+
+    margin-top: 20px;
+}
+
+.secondary-btn {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 14px 21px;
+
+    border: 1px solid #171717;
+    border-radius: 9px;
+
+    font-weight: 700;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.secondary-btn:hover {
+    background: #171717;
+    color: #ffffff;
+}
+
+.showcase-image {
+    height: 550px;
+
+    border-radius: 25px;
+    overflow: hidden;
+
+    background: #eee;
+}
+
+.showcase-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   ORDER SECTION
+========================= */
+
+.order-section {
+    background: #171717;
+    color: #ffffff;
+
+    padding: 100px 20px;
+}
+
+.order-container {
+    max-width: 720px;
+    margin: auto;
+}
+
+.order-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.order-heading h2 {
+    font-size: 42px;
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+
+    margin-top: 8px;
+}
+
+.order-heading p {
+    color: #aaaaaa;
+
+    max-width: 550px;
+    margin: 15px auto 0;
+
+    font-size: 14px;
+}
+
+
+/* FORM */
+
+#orderForm {
+    background: #ffffff;
+    color: #171717;
+
+    padding: 30px;
+
+    border-radius: 22px;
+}
+
+
+/* PRODUCT */
+
+.form-product {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    margin-bottom: 25px;
+}
+
+.form-product img {
+    width: 80px;
+    height: 80px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+.form-product h3 {
+    font-size: 16px;
+}
+
+.form-product p {
+    color: #777777;
+    font-size: 13px;
+}
+
+.form-product strong {
+    display: block;
+    margin-top: 4px;
+}
+
+
+/* FORM GROUP */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.form-group label span {
+    font-weight: 400;
+    color: #999999;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid #dddddd;
+    background: #fafafa;
+
+    padding: 13px 14px;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #171717;
+    background: #ffffff;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group small {
+    display: block;
+
+    color: #999999;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+}
+
+
+/* FORM ROW */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* SECTION TITLE */
+
+.form-section-title {
+    font-size: 15px;
+    font-weight: 800;
+
+    margin: 30px 0 18px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* QUANTITY */
+
+.quantity-control {
+    display: flex;
+
+    width: 135px;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.quantity-control button {
+    width: 42px;
+
+    border: none;
+    background: #f5f5f5;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.quantity-control input {
+    width: 50px;
+
+    border: none;
+    text-align: center;
+
+    outline: none;
+}
+
+
+/* ORDER SUMMARY */
+
+.order-summary {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #f7f7f7;
+
+    border-radius: 12px;
+}
+
+.order-summary > div {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 7px 0;
+
+    font-size: 14px;
+}
+
+.order-summary span {
+    color: #777777;
+}
+
+.order-summary strong {
+    font-weight: 700;
+}
+
+.order-summary .total-row {
+    margin-top: 10px;
+    padding-top: 15px;
+
+    border-top: 1px solid #dddddd;
+
+    font-size: 17px;
+}
+
+.order-summary .total-row strong {
+    font-size: 21px;
+}
+
+
+/* COD */
+
+.cod-box {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: #f4eee9;
+
+    border-radius: 10px;
+}
+
+.cod-icon {
+    font-size: 24px;
+}
+
+.cod-box strong {
+    font-size: 14px;
+}
+
+.cod-box p {
+    color: #777777;
+    font-size: 12px;
+}
+
+
+/* SUBMIT */
+
+.submit-btn {
+    width: 100%;
+
+    border: none;
+
+    margin-top: 18px;
+
+    padding: 16px;
+
+    background: #171717;
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    background: #333333;
+}
+
+.form-note {
+    text-align: center;
+
+    color: #999999;
+
+    font-size: 11px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   TRUST
+========================= */
+
+.trust-section {
+    background: #ffffff;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 50px;
+
+    padding: 35px 20px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.trust-section div {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 13px;
+}
+
+.trust-section strong {
+    font-size: 20px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #ffffff;
+
+    text-align: center;
+
+    padding: 45px 20px 90px;
+}
+
+footer .logo {
+    margin-bottom: 7px;
+}
+
+footer p {
+    color: #777777;
+    font-size: 13px;
+}
+
+footer small {
+    display: block;
+
+    margin-top: 20px;
+
+    color: #aaaaaa;
+    font-size: 11px;
+}
+
+
+/* =========================
+   MOBILE STICKY
+========================= */
+
+.mobile-order-bar {
+    display: none;
+}
+
+
+/* =========================================
+   CUTE FIND PK
+   PROPER MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .hero {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 35px 18px 70px;
+    }
+
+    .gallery {
+        width: 100%;
+    }
+
+    .main-image-box {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 20px;
+    }
+
+    .main-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* ================================
+       GALLERY ARROWS
+    ================================= */
+
+    .gallery-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+
+    .gallery-arrow.left {
+        left: 10px;
+    }
+
+    .gallery-arrow.right {
+        right: 10px;
+    }
+
+
+    /* ================================
+       THUMBNAILS
+    ================================= */
+
+    .thumbnails {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 3px;
+        scrollbar-width: none;
+    }
+
+    .thumbnails::-webkit-scrollbar {
+        display: none;
+    }
+
+    .thumbnail {
+        flex: 0 0 72px;
+        width: 72px;
+        height: 72px;
+    }
+
+    .thumbnail img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+
+
+    /* ================================
+       HERO CONTENT
+    ================================= */
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .small-label {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(36px, 10vw, 48px);
+        line-height: 1.05;
+        letter-spacing: -2px;
+        max-width: 100%;
+    }
+
+    .hero-description {
+        margin-top: 18px;
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+
+    /* ================================
+       PRICE
+    ================================= */
+
+    .price-box {
+        margin-top: 20px;
+        gap: 12px;
+    }
+
+    .old-price {
+        font-size: 15px;
+    }
+
+    .current-price {
+        font-size: 27px;
+    }
+
+
+    /* ================================
+       QUICK INFO
+    ================================= */
+
+    .quick-info {
+        margin-top: 20px;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+
+    /* ================================
+       MAIN ORDER BUTTON
+    ================================= */
+
+    .primary-btn {
+        width: 100%;
+        min-width: 0;
+        margin-top: 25px;
+        padding: 15px 20px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    .safe-text {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+
+
+    /* ================================
+       FEATURES
+    ================================= */
+
+    .features-section {
+        padding: 60px 18px;
+    }
+
+    .section-heading {
+        width: 100%;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+        line-height: 1.15;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 500px;
+        margin: 35px auto 0;
+        gap: 12px;
+    }
+
+    .feature-card {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .feature-card h3 {
+        font-size: 17px;
+    }
+
+    .feature-card p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* ================================
+       SHOWCASE
+    ================================= */
+
+    .showcase {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 65px 18px;
+    }
+
+    .showcase-text {
+        width: 100%;
+    }
+
+    .showcase-text h2 {
+        font-size: 40px;
+        line-height: 1.05;
+        letter-spacing: -1.5px;
+    }
+
+    .showcase-text p {
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .secondary-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+    }
+
+    .showcase-image {
+        width: 100%;
+        height: 390px;
+        border-radius: 20px;
+    }
+
+
+    /* ================================
+       ORDER SECTION
+    ================================= */
+
+    .order-section {
+        width: 100%;
+        padding: 65px 14px;
+    }
+
+    .order-container {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .order-heading {
+        margin-bottom: 30px;
+    }
+
+    .order-heading h2 {
+        font-size: 34px;
+        line-height: 1.1;
+    }
+
+    .order-heading p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* ================================
+       ORDER FORM
+    ================================= */
+
+    #orderForm {
+        width: 100%;
+        padding: 20px 16px;
+        border-radius: 17px;
+    }
+
+
+    /* ================================
+       PRODUCT IN FORM
+    ================================= */
+
+    .form-product {
+        gap: 12px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-product img {
+        width: 65px;
+        height: 65px;
+        flex-shrink: 0;
+        border-radius: 10px;
+    }
+
+    .form-product h3 {
+        font-size: 14px;
+    }
+
+    .form-product p {
+        font-size: 12px;
+    }
+
+
+    /* ================================
+       FORM ROW
+    ================================= */
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        min-height: 48px;
+        padding: 12px 13px;
+        font-size: 16px;
+        border-radius: 9px;
+    }
+
+    .form-group textarea {
+        min-height: 95px;
+    }
+
+    .form-group small {
+        font-size: 10px;
+    }
+
+
+    /* ================================
+       SECTION TITLES
+    ================================= */
+
+    .form-section-title {
+        font-size: 14px;
+        margin: 25px 0 15px;
+    }
+
+
+    /* ================================
+       QUANTITY
+    ================================= */
+
+    .quantity-control {
+        width: 130px;
+        height: 45px;
+    }
+
+    .quantity-control button {
+        width: 42px;
+        height: 45px;
+        font-size: 19px;
+    }
+
+    .quantity-control input {
+        width: 46px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+
+    /* ================================
+       ORDER SUMMARY
+    ================================= */
+
+    .order-summary {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 11px;
+    }
+
+    .order-summary > div {
+        font-size: 13px;
+        padding: 6px 0;
+    }
+
+    .order-summary .total-row {
+        font-size: 16px;
+    }
+
+    .order-summary .total-row strong {
+        font-size: 20px;
+    }
+
+
+    /* ================================
+       COD
+    ================================= */
+
+    .cod-box {
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .cod-icon {
+        font-size: 21px;
+    }
+
+    .cod-box strong {
+        font-size: 13px;
+    }
+
+    .cod-box p {
+        font-size: 11px;
+    }
+
+
+    /* ================================
+       SUBMIT BUTTON
+    ================================= */
+
+    .submit-btn {
+        min-height: 52px;
+        padding: 14px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+
+    /* ================================
+       TRUST SECTION
+    ================================= */
+
+    .trust-section {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        padding: 25px 20px;
+    }
+
+    .trust-section div {
+        font-size: 12px;
+    }
+
+
+    /* ================================
+       MOBILE STICKY BAR
+    ================================= */
+
+    body {
+        padding-bottom: 75px;
+    }
+
+    .mobile-order-bar {
+        position: fixed;
+        z-index: 9999;
+
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+
+        min-height: 68px;
+
+        background: rgba(255,255,255,0.97);
+
+        border-top: 1px solid #dddddd;
+
+        padding: 9px 14px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        box-shadow: 0 -5px 25px rgba(0,0,0,0.10);
+    }
+
+    .mobile-order-bar div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-order-bar span {
+        font-size: 10px;
+        color: #777777;
+    }
+
+    .mobile-order-bar strong {
+        font-size: 16px;
+    }
+
+    .mobile-order-bar a {
+        background: #171717;
+        color: #ffffff;
+
+        padding: 12px 20px;
+
+        border-radius: 9px;
+
+        font-size: 13px;
+        font-weight: 800;
+
+        white-space: nowrap;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+   480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    .top-bar {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+
+    /* NAVBAR */
+
+    .navbar {
+        height: 62px;
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-order-btn {
+        padding: 8px 13px;
+        font-size: 11px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 22px 13px 55px;
+        gap: 25px;
+    }
+
+
+    /* IMAGE */
+
+    .main-image-box {
+        aspect-ratio: 1 / 1.05;
+        border-radius: 17px;
+    }
+
+    .gallery-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .gallery-arrow.left {
+        left: 8px;
+    }
+
+    .gallery-arrow.right {
+        right: 8px;
+    }
+
+
+    /* THUMBNAILS */
+
+    .thumbnails {
+        gap: 7px;
+        margin-top: 9px;
+    }
+
+    .thumbnail {
+        flex: 0 0 62px;
+        width: 62px;
+        height: 62px;
+        border-radius: 9px;
+    }
+
+
+    /* TEXT */
+
+    .hero-content h1 {
+        font-size: 36px;
+        letter-spacing: -1.7px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .current-price {
+        font-size: 26px;
+    }
+
+
+    /* FEATURES */
+
+    .features-section {
+        padding: 55px 13px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+
+    /* SHOWCASE */
+
+    .showcase {
+        padding: 55px 13px;
+    }
+
+    .showcase-text h2 {
+        font-size: 36px;
+    }
+
+    .showcase-image {
+        height: 350px;
+        border-radius: 17px;
+    }
+
+
+    /* ORDER */
+
+    .order-section {
+        padding: 55px 10px;
+    }
+
+    .order-heading h2 {
+        font-size: 30px;
+    }
+
+    #orderForm {
+        padding: 18px 14px;
+        border-radius: 15px;
+    }
+
+
+    /* STICKY */
+
+    .mobile-order-bar {
+        min-height: 65px;
+        padding: 8px 11px;
+    }
+
+    .mobile-order-bar strong {
+        font-size: 15px;
+    }
+
+    .mobile-order-bar a {
+        padding: 11px 16px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   360px
+========================================= */
+
+@media (max-width: 360px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .nav-order-btn {
+        padding: 7px 11px;
+        font-size: 10px;
+    }
+
+
+    .hero {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .main-image-box {
+        border-radius: 15px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+
+    .features-section,
+    .showcase {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .order-section {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    #orderForm {
+        padding: 16px 12px;
+    }
+
+
+    .mobile-order-bar a {
+        padding: 10px 13px;
+    }
+}
